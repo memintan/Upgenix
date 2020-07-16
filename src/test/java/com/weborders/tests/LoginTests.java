@@ -1,6 +1,6 @@
 package com.weborders.tests;
 
-public class LoginTests extends AbstractBaseTest {
+public class LoginTests extends BaseTest {
 
 
     }
