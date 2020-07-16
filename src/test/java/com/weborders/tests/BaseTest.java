@@ -14,7 +14,7 @@ import org.testng.annotations.*;
 import java.io.IOException;
 
 
-public abstract class AbstractBaseTest {
+public abstract class BaseTest {
 
     protected WebDriver driver;
     protected static ExtentReports extentReports;
