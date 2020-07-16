@@ -14,6 +14,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
  * It meant to be extended
  */
 public abstract class BasePage {
+
     protected WebDriver driver = Driver.getDriver();
     protected WebDriverWait wait = new WebDriverWait(driver, 20);
 
@@ -22,11 +23,13 @@ public abstract class BasePage {
 
 
     public String getPageLogoText() {
+
         return pageLogo.getText();
     }
 
 
     public BasePage() {
+
         PageFactory.initElements(driver, this);
     }
 
