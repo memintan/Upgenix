@@ -1,4 +1,4 @@
-package org.example.pages;
+package com.weborders.pages;
 
 public abstract class BasePage {
 }

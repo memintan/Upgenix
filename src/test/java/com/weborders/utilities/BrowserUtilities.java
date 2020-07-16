@@ -1,4 +1,4 @@
-package org.example.utilities;
+package com.weborders.utilities;
 
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.JavascriptExecutor;
@@ -34,7 +34,7 @@ public class BrowserUtilities {
      * @return collection of strings
      */
     public static List<String> getTextFromWebElements(List<WebElement> elements) {
-        List<String> textValues = new ArrayList<> ();
+        List<String> textValues = new ArrayList<>();
         for (WebElement element : elements) {
             if (!element.getText().isEmpty()) {
                 textValues.add(element.getText());
@@ -49,9 +49,9 @@ public class BrowserUtilities {
      * @param timeOutInSeconds
      */
     public static void waitForPageToLoad(long timeOutInSeconds) {
-        ExpectedCondition<Boolean> expectation =driver -> ((JavascriptExecutor) driver).executeScript("return document.readyState").equals("complete");
+        ExpectedCondition<Boolean> expectation = driver -> ((JavascriptExecutor) driver).executeScript("return document.readyState").equals("complete");
         try {
-            WebDriverWait wait = new WebDriverWait( Driver.getDriver(), timeOutInSeconds);
+            WebDriverWait wait = new WebDriverWait(Driver.getDriver(), timeOutInSeconds);
             wait.until(expectation);
         } catch (Throwable error) {
             error.printStackTrace();
@@ -83,7 +83,7 @@ public class BrowserUtilities {
      */
     public static String getScreenshot(String name) {
         //adding date and time to screenshot name, to make screenshot unique
-        name = new Date ().toString().replace(" ", "_").replace(":", "-") + "_" + name;
+        name = new Date().toString().replace(" ", "_").replace(":", "-") + "_" + name;
         //where we gonna store a screenshot
         String path = "";
 
@@ -102,7 +102,7 @@ public class BrowserUtilities {
         //take screenshot of web browser, and save it as a file
         File source = takesScreenshot.getScreenshotAs(OutputType.FILE);
         //where screenshot will be saved
-        File destination = new File (path);
+        File destination = new File(path);
         try {
             //copy file to the previously specified location
             FileUtils.copyFile(source, destination);

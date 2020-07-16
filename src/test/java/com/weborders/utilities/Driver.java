@@ -1,4 +1,4 @@
-package org.example.utilities;
+package com.weborders.utilities;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
@@ -9,7 +9,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 public class Driver {
 
     //same for everyone
-    private static ThreadLocal<WebDriver> driverPool = new ThreadLocal<> ();
+    private static ThreadLocal<WebDriver> driverPool = new ThreadLocal<>();
 
     //so no one can create object of Driver class
     //everyone should call static getter method instead
@@ -48,7 +48,7 @@ public class Driver {
                     driverPool.set(new FirefoxDriver());
                     break;
                 default:
-                    throw new RuntimeException ("Wrong browser name!");
+                    throw new RuntimeException("Wrong browser name!");
             }
         }
         return driverPool.get();
@@ -84,7 +84,7 @@ public class Driver {
                     driverPool.set(new FirefoxDriver());
                     break;
                 default:
-                    throw new RuntimeException ("Wrong browser name!");
+                    throw new RuntimeException("Wrong browser name!");
             }
         }
         return driverPool.get();
