@@ -25,6 +25,7 @@ public abstract class BasePage {
         return pageLogo.getText();
     }
 
+
     public BasePage() {
         PageFactory.initElements(driver, this);
     }
